@@ -11,9 +11,9 @@ category:            Web
 build-type:          Simple
 cabal-version:       >=1.10
 
-executable main
+library
+  exposed-modules:     System.IO.Streams.HTTP
   hs-source-dirs:      src
-  main-is:             System/IO/Streams/HTTP.hs
   build-depends:       HsOpenSSL
                      , base >=4.7 && <4.8
                      , bytestring
