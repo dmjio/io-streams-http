@@ -1,4 +1,4 @@
 io-streams-http
 ===============
 
-http-client-openssl meets io-streams
+http-client-tls meets io-streams
