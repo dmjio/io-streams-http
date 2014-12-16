@@ -14,12 +14,11 @@ cabal-version:       >=1.10
 library
   exposed-modules:     System.IO.Streams.HTTP
   hs-source-dirs:      src
-  build-depends:       HsOpenSSL
-                     , base >=4.7 && <4.8
+  build-depends:       base >=4.7 && <4.8
                      , bytestring
                      , http-client
                      , http-client-tls
                      , io-streams
-                     , mtl >= 2.2.1
+                     , mtl
                      , transformers >= 0.4.2.0
   default-language:    Haskell2010

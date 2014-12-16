@@ -105,15 +105,11 @@ withHTTP r m k = withResponse r m k'
 ------------------------------------------------------------------------------
 -- | Produce an InputStream from a streaming IO ByteString action
 from :: IO ByteString -> IO (InputStream ByteString)
-from io =
-    Streams.fromGenerator $ do
-      let loop :: Generator ByteString ()
-          loop = do
-            bs <- liftIO io
-            if B.null bs
-              then liftIO $ return ()
-              else Streams.yield bs >> loop
-      loop
+from io = Streams.makeInputStream $ do
+            bs <- io
+            return $ if B.null bs
+              then Nothing
+              else Just bs
 
 ------------------------------------------------------------------------------
 -- | Stream body of request
