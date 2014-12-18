@@ -7,7 +7,7 @@ license-file:        LICENSE
 author:              David Johnson
 maintainer:          djohnson.m@gmail.com
 copyright:           Vertigo Media Inc. 2014-2015 (c)
-category:            Web
+category:            Web, IO-Streams
 build-type:          Simple
 cabal-version:       >=1.10
 
