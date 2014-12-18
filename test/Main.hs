@@ -9,7 +9,7 @@ import           Network.HTTP.Client     ( responseBody )
 
 main :: IO ()
 main = do
-  req <- parseUrl "http://google.com"
+  req <- parseUrl "http://www.worldslongestwebsite.com"
   withManager tlsManagerSettings $ \m ->
     withHTTP req m $ \resp -> do
         Streams.supplyTo Streams.stdout (responseBody resp)   

@@ -20,22 +20,20 @@
 --
 -- > {-# LANGUAGE OverloadedStrings #-}
 -- >
--- > import           System.IO.Streams (InputStream, OutputStream)
--- > import qualified System.IO.Streams as Streams
--- > import           System.IO.Streams.HTTP
--- > import           Network.HTTP.Client
--- >
+-- > module Main where
+-- > import           System.IO.Streams       ( InputStream, OutputStream )
+-- > import qualified System.IO.Streams as    Streams
+-- > import           System.IO.Streams.HTTP  ( withHTTP, parseUrl, withManager )
+-- > import           Network.HTTP.Client.TLS ( tlsManagerSettings )
+-- > import           Network.HTTP.Client     ( responseBody )
+-- > 
 -- > main :: IO ()
 -- > main = do
--- >     req <- parseUrl "https://www.example.com"
--- >     is <- handleFromInputStream stdin
--- >     let req' = req
--- >             { method = "POST"
--- >             , requestBody = stream is
--- >             }
--- >     withManager tlsManagerSettings $ \m ->
--- >       Streams.handleToOutputStream stdout >>=
--- >         Streams.connect (responseBody resp)
+-- >  req <- parseUrl "http://www.worldslongestwebsite.com"
+-- >  withManager tlsManagerSettings $ \m ->
+-- >    withHTTP req m $ \resp -> do
+-- >      Streams.supplyTo Streams.stdout (responseBody resp)
+-- >
 --
 -- For non-streaming request bodies, study the 'RequestBody' type,
 -- which also
