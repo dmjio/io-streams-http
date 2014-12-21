@@ -1,5 +1,5 @@
 name:                io-streams-http
-version:             0.2.0.1
+version:             0.2.0.2
 synopsis:            http-client for io-streams
 description:         Thin io-streams wrapper for http-client
 license:             BSD3
