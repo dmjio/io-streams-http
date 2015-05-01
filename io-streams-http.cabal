@@ -1,5 +1,5 @@
 name:                io-streams-http
-version:             0.2.0.2
+version:             0.2.1.2
 synopsis:            http-client for io-streams
 description:         Thin io-streams wrapper for http-client
 license:             BSD3
@@ -14,13 +14,13 @@ cabal-version:       >=1.10
 library
   exposed-modules:     System.IO.Streams.HTTP
   hs-source-dirs:      src
-  build-depends:       base >=4.7 && <4.8
+  build-depends:       base
                      , bytestring
                      , http-client
                      , http-client-tls
                      , io-streams
                      , mtl
-                     , transformers >= 0.4.2.0
+                     , transformers
   default-language:    Haskell2010
 
 source-repository head
